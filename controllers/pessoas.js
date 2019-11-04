@@ -21,9 +21,22 @@ const createProcess = async(connection, req, res) =>{
     res.redirect('/pessoas')
 }
 
+
+const updateForm = async(connection, req, res) => {
+    const pessoa = await pessoas.findById(connection, req.params.id)
+    res.render('pessoas/update', {pessoa})    
+}
+
+const updateProcess = async(connection, req, res) =>{
+    await pessoas.update(connection, req.params.id, req.body)
+    res.redirect('/pessoas')
+}
+
 module.exports = {
     index,
     deleteOne,
     createForm,
-    createProcess
+    createProcess,
+    updateForm,
+    updateProcess
 }

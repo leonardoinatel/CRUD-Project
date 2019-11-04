@@ -1,0 +1,28 @@
+<% include ../partials/header.ejs %>
+
+<h1>Editar pessoa</h1>
+<p>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <a type="button" class="btn btn-secondary" href="/pessoas">Voltar a lista de pessoas</a>
+    </div>  
+</p>
+
+
+<form method="POST">
+    <div class="col-md-4 mb-3">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" value="<%= pessoa.nome %>">
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="cargo">Cargo</label>
+        <input type="text" class="form-control" id="cargo" name="cargo" placeholder="Digite seu cargo" value="<%= pessoa.cargo %>">
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="nacimento">Nascimento</label>
+        <input type="text" class="form-control" id="nasceid" name="nascimento" placeholder="Digite seu nascimento" value="<%= pessoa.nascimento %>"><br>
+        
+    </div>
+    <input class="btn btn-primary" type="submit" value="Submit">
+</form>
+
+<% include ../partials/footer.ejs %>    
