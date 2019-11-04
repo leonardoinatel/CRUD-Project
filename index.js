@@ -10,12 +10,16 @@ const connection = mysql.createConnection({
     password:'8785491',
     database: 'cadastro'
 })
+const dependencies = {
+    connection
+}
 
-connection.connect(() => console.log('conected'))
+const pessoas = require('./routes/pessoas')
 
 app.use(express.static('public'))
 
 app.get('/',(req,res) => res.render('home'))
+app.use('/pessoas', pessoas(dependencies))
 
 //view engine
 app.set('views', path.join(__dirname,'views'))

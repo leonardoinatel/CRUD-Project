@@ -1,0 +1,29 @@
+<% include ../partials/header.ejs %>
+
+<h1>Nova pessoas</h1>
+<p>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <a type="button" class="btn btn-secondary" href="/pessoas">Voltar a lista de pessoas</a>
+    </div>  
+</p>
+
+
+<!-- name, cargo, nascimento -->
+<form>
+    <div class="col-md-4 mb-3">
+        <label for="formGroupExampleInput">Nome</label>
+        <input type="text" class="form-control" id="nomeid" placeholder="Digite seu nome">
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="formGroupExampleInput2">Cargo</label>
+        <input type="text" class="form-control" id="cargoid" placeholder="Digite seu cargo">
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="formGroupExampleInput2">Nascimento</label>
+        <input type="text" class="form-control" id="nasceid" placeholder="Digite seu nascimento"><br>
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </div>
+    
+</form>
+
+<% include ../partials/footer.ejs %>
