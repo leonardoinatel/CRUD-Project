@@ -9,21 +9,21 @@
 
 
 <!-- name, cargo, nascimento -->
-<form>
+<form method="post">
     <div class="col-md-4 mb-3">
-        <label for="formGroupExampleInput">Nome</label>
-        <input type="text" class="form-control" id="nomeid" placeholder="Digite seu nome">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome">
     </div>
     <div class="col-md-4 mb-3">
-        <label for="formGroupExampleInput2">Cargo</label>
-        <input type="text" class="form-control" id="cargoid" placeholder="Digite seu cargo">
+        <label for="cargo">Cargo</label>
+        <input type="text" class="form-control" id="cargo" name="cargo" placeholder="Digite seu cargo">
     </div>
     <div class="col-md-4 mb-3">
-        <label for="formGroupExampleInput2">Nascimento</label>
-        <input type="text" class="form-control" id="nasceid" placeholder="Digite seu nascimento"><br>
-        <input class="btn btn-primary" type="submit" value="Submit">
+        <label for="nacimento">Nascimento</label>
+        <input type="text" class="form-control" id="nasceid" name="nascimento" placeholder="Digite seu nascimento"><br>
+        
     </div>
-    
+    <input class="btn btn-primary" type="submit" value="Submit">
 </form>
 
-<% include ../partials/footer.ejs %>
+<% include ../partials/footer.ejs %>    

@@ -16,8 +16,14 @@ const createForm = (req,res) => {
     res.render('pessoas/create')    
 }
 
+const createProcess = async(connection, req, res) =>{
+    await pessoas.create(connection, req.body)
+    res.redirect('/pessoas')
+}
+
 module.exports = {
     index,
     deleteOne,
-    createForm
+    createForm,
+    createProcess
 }

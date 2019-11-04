@@ -1,8 +1,11 @@
 const express = require('express')
 const path = require('path')
-const app = express()
-const port = process.env.port || 3000
 const mysql = require('mysql')
+const bodyParser = require('body-parser')
+
+const app = express()
+
+const port = process.env.port || 3000
 
 const connection = mysql.createConnection({
     host:'localhost',
@@ -16,6 +19,7 @@ const dependencies = {
 
 const pessoas = require('./routes/pessoas')
 
+app.use(bodyParser.urlencoded({ extended: false}))
 app.use(express.static('public'))
 
 app.get('/',(req,res) => res.render('home'))
