@@ -1,14 +1,14 @@
 const pessoas = require('../models/pessoas')
 
-const index = async(connection, req, res) => {
-    const results = await pessoas.findAll(connection)
+const index = async(db, req, res) => {
+    const results = await pessoas.findAll(db)
     res.render('pessoas/index', {
         pessoas: results
     })
 }
 
-const deleteOne = async(connection, req, res) =>{
-    await pessoas.deleteOne(connection, req.params.id)
+const deleteOne = async(db, req, res) =>{
+    await pessoas.deleteOne(db, req.params.id)
     res.redirect('/pessoas')
 }
 
@@ -16,19 +16,20 @@ const createForm = (req,res) => {
     res.render('pessoas/create')    
 }
 
-const createProcess = async(connection, req, res) =>{
-    await pessoas.create(connection, req.body)
+const createProcess = async(db, req, res) =>{
+    await pessoas.create(db, req.body)
     res.redirect('/pessoas')
 }
 
 
-const updateForm = async(connection, req, res) => {
-    const pessoa = await pessoas.findById(connection, req.params.id)
+const updateForm = async(db, req, res) => {
+    console.log(req.params.id)
+    const pessoa = await pessoas.findById(db, req.params.id)
     res.render('pessoas/update', { pessoa })    
 }
 
-const updateProcess = async(connection, req, res) =>{
-    await pessoas.update(connection, req.params.id, req.body)
+const updateProcess = async(db, req, res) =>{
+    await pessoas.update(db, req.params.id, req.body)
     res.redirect('/pessoas')
 }
 
