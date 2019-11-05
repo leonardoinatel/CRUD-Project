@@ -24,7 +24,7 @@ const createProcess = async(connection, req, res) =>{
 
 const updateForm = async(connection, req, res) => {
     const pessoa = await pessoas.findById(connection, req.params.id)
-    res.render('pessoas/update', {pessoa})    
+    res.render('pessoas/update', { pessoa })    
 }
 
 const updateProcess = async(connection, req, res) =>{

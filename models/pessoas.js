@@ -41,7 +41,7 @@ const findById = (connection, id) =>{
 
 const update = (connection, id, data) => {
     return new Promise((resolve, reject) =>{
-        connection.query(`Update pessoas set nome = '${data.nome}', cargo = '${data.cargo}', nascimento = '${data.nascimento}' WHERE id = `+ id + 'limite 1', (err) => {
+        connection.query(`Update pessoas set nome = '${data.nome}', cargo = '${data.cargo}', nascimento = '${data.nascimento}' WHERE id='${id}' `, (err) => {
             if(err){
                 reject(err)
             }else{
@@ -55,7 +55,6 @@ const create = (connection, data) =>{
     return new Promise((resolve,reject) =>{
         connection.query(`Insert into pessoas(nome,cargo,nascimento) values('${data.nome}','${data.cargo}','${data.nascimento}')`, (err) =>{
             if(err){
-                console.log(err)
                 reject(err)
 
             }else{
